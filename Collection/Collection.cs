@@ -112,6 +112,6 @@ namespace Collections
             }
             result.Append("]");
             return result.ToString();
-        }
+        } 
     }
 }
