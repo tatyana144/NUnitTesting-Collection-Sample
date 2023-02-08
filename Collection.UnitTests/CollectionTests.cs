@@ -299,6 +299,18 @@ namespace Collection.UnitTests
             Assert.That(result, Is.EqualTo("[Vasil, Valentin]"));
         }
 
+        [TestCase("Vasil,Deyan,Valentin", 0, "Vasil")]
+        [TestCase("Vasil,Deyan,Valentin", 2, "Valentin")]
+        public void Test_Collection_GetByValidIndex(string data, int index, string expected)
+        {
+            //Act
+            var coll = new Collection<string>(data.Split(","));
+            var actual = coll[index];
+
+            //Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
       
     }
 }
